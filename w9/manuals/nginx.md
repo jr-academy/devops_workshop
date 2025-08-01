@@ -1,4 +1,4 @@
-Sure, I'd be happy to guide you through deploying a service on k8s and scaling it. We'll use a simple Nginx server as an example. 
+This document guide you through deploying a service on k8s and scaling it. We'll use a simple Nginx server as an example. 
 
 **Step 1:** We'll start by creating a Deployment. Here's a sample YAML file to create a Deployment that runs an Nginx server:
 
@@ -36,7 +36,7 @@ kubectl apply -f nginx-deployment.yaml
 
 ```yaml
 apiVersion: v1
-kind:Service
+kind: Service
 metadata:
   name: nginx-service
 spec:
@@ -79,12 +79,11 @@ kubectl autoscale deployment nginx-deployment --min=2 --max=5 --cpu-percent=80
 
 This command will ensure that there are always between 2 and 5 replicas of the Deployment running, scaling up and down based on CPU usage.
 
-**Step 8:** To view the status of the Deployment, Service, and Horizontal Pod Autoscaler, you can use the following commands:
+**Step 8:** To view the status of the Deployment, Service, you can use the following commands:
 
 ```
 kubectl get deployments
 kubectl get services
-kubectl get hpa
 ```
 
 This is a basic guide to deploying a service on Kubernetes, and scaling it both manually and automatically. There are many other features in Kubernetes that allow for even more complex deployments and management of applications.
